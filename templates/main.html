@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src="static/application.js"></script>
+        <link rel="stylesheet" type="text/css" href="static/styles.css">
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <p class="heading">Stock Search</p>
+        </div>
+    
+        <background-image></background-image>
+        <div class="search-container" id="searchButton">
+            <form onsubmit="event.preventDefault(); search();">
+                <input type="text" id="parameterInput" class="search-bar" placeholder="Enter Stock Ticker Symbol" required>
+                <button type="submit" class="search-btn">
+                    <img src="static/img/search-solid.svg" alt="Search">
+                </button>
+            </form>
+            <button class="clear-btn" onclick="clearInput()">
+                <img src="static/img/times-solid.svg" alt="Clear">
+            </button>
+        </div>
+        
+          <div class="below-container" id="below-container">
+          <div class="button-container" id="button-container" style="display: none;">
+            <button onclick="stockcompanydata() " id="company-button" class="button">Company</button>
+            <button onclick="getstocksummary()" id="summary-button" class="button">Stock Summary</button>
+            <button onclick="stockchartsdata()" id="charts-button" class="button">Charts</button>
+            <button onclick="stocklatestnews()" id="latestnews-button" class="button">Latest News</button>
+        </div>
+        <div id="response"></div>
+        <div id="companydata" class="company-data"></div>
+        <div id="stocksummary" class="stock-summary"></div>
+        <div id="recommendationtrend" class="recommendation-trend"></div>
+        <div id="stockchart" class="stock-chart"></div>
+        <div id="latestNews" class="latest-news"></div>
+        <div id="error-message" class="error-message"></div>
+    </div>  
+       
+       </script>
+    </body>
+</html>
